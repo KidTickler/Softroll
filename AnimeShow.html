@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch Anime - SoftRoll</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        .anime-details {
+            margin: 2rem 0;
+        }
+        .episode-list {
+            margin-top: 1rem;
+        }
+        .episode-list button {
+            display: block;
+            margin: 0.5rem 0;
+            padding: 1rem;
+            background: #333;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .episode-list button:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>SoftRoll</h1>
+        <p>Watch Your Favorite Anime</p>
+    </header>
+
+    <div class="container">
+        <div class="anime-details">
+            <h2 id="anime-title">Anime Title</h2>
+            <video id="anime-video" width="100%" controls>
+                <source src="https://via.placeholder.com/800x450" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <p id="episode-name">Currently Watching: Episode 1</p>
+
+            <div class="episode-list">
+                <!-- Example Episodes -->
+                <button onclick="playEpisode('episode1.mp4', 'Episode 1')">Episode 1</button>
+                <button onclick="playEpisode('episode2.mp4', 'Episode 2')">Episode 2</button>
+                <!-- Add more episodes here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        function playEpisode(src, episodeName) {
+            document.getElementById('anime-video').src = src;
+            document.getElementById('episode-name').innerText = `Currently Watching: ${episodeName}`;
+        }
+
+        // Set the anime title dynamically
+        document.getElementById('anime-title').innerText = `Anime Title: ${getQueryParam('title')}`;
+    </script>
+</body>
+</html>
