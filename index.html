@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SoftRoll - Anime Streaming</title>
+    <title>Softroll - Popular Anime</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -22,84 +22,64 @@
             width: 80%;
             margin: 0 auto;
         }
-        .section {
-            margin: 2rem 0;
-        }
-        .section h2 {
-            border-bottom: 2px solid #333;
-            padding-bottom: 0.5rem;
-            margin-bottom: 1rem;
-        }
         .anime-list {
             display: flex;
             flex-wrap: wrap;
-            gap: 1rem;
+            justify-content: space-around;
+            margin: 2rem 0;
         }
         .anime-item {
-            background: #fff;
+            width: 30%;
+            margin: 1rem 0;
             border: 1px solid #ddd;
             border-radius: 8px;
             overflow: hidden;
-            width: calc(25% - 1rem);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         .anime-item img {
             width: 100%;
             height: auto;
+            display: block;
         }
         .anime-item a {
-            text-decoration: none;
-            color: #333;
             display: block;
+            text-align: center;
             padding: 1rem;
-        }
-        .anime-item a:hover {
-            background: #f4f4f4;
-        }
-        footer {
             background: #333;
             color: #fff;
-            padding: 1rem 0;
-            text-align: center;
+            text-decoration: none;
+        }
+        .anime-item a:hover {
+            background: #555;
+        }
+        @media (max-width: 768px) {
+            .anime-item {
+                width: 100%;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>SoftRoll</h1>
-        <p>Your favorite anime streaming site</p>
+        <h1>Softroll - Popular Anime</h1>
     </header>
 
     <div class="container">
-        <!-- Popular Anime Section -->
-        <div class="section" id="popular-anime">
-            <h2>Popular Anime</h2>
-            <div class="anime-list">
-                <!-- Example Anime Item -->
-                <div class="anime-item">
-                    <img src="https://via.placeholder.com/300x400" alt="Anime Title">
-                    <a href="anime.html?title=anime1">Anime Title 1</a>
-                </div>
-                <!-- Add more anime items here -->
+        <div class="anime-list">
+            <div class="anime-item">
+                <img src="https://m.media-amazon.com/images/M/MV5BMzMxY2YyODUtZjlmZi00YjM3LWE4N2YtMjQ5OTg5NTFkZDQ2XkEyXkFqcGdeQXVyODc5Mjc4Nzg@._V1_FMjpg_UX1000_.jpg" alt="Azumanga Daioh">
+                <a href="anime-player.html?anime=azumanga">Azumanga Daioh</a>
             </div>
-        </div>
-
-        <!-- New Anime Section -->
-        <div class="section" id="new-anime">
-            <h2>New Anime</h2>
-            <div class="anime-list">
-                <!-- Example Anime Item -->
-                <div class="anime-item">
-                    <img src="https://via.placeholder.com/300x400" alt="Anime Title">
-                    <a href="anime.html?title=anime2">Anime Title 2</a>
-                </div>
-                <!-- Add more anime items here -->
+            <div class="anime-item">
+                <img src="images/naruto-cover.jpg" alt="Naruto">
+                <a href="anime-player.html?anime=naruto">Naruto</a>
             </div>
+            <div class="anime-item">
+                <img src="images/onepiece-cover.jpg" alt="One Piece">
+                <a href="anime-player.html?anime=onepiece">One Piece</a>
+            </div>
+            <!-- Add more anime items here -->
         </div>
     </div>
-
-    <footer>
-        <p>&copy; 2024 SoftRoll. All rights reserved.</p>
-    </footer>
 </body>
 </html>
