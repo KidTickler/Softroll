@@ -3,82 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Softroll - Popular Anime</title>
+    <title>Softroll</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         header {
-            background: #333;
-            color: #fff;
-            padding: 1rem 0;
-            text-align: center;
-        }
-        .container {
-            width: 80%;
-            margin: 0 auto;
-        }
-        .anime-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            margin: 2rem 0;
-        }
-        .anime-item {
-            width: 30%;
-            margin: 1rem 0;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .anime-item img {
+            background-color: #444;
             width: 100%;
-            height: auto;
-            display: block;
+            height: 60px;
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
         }
-        .anime-item a {
-            display: block;
-            text-align: center;
-            padding: 1rem;
-            background: #333;
+        #logo-container {
+            display: flex;
+            align-items: center;
+        }
+        #logo {
+            height: 50px;
+            margin-right: 10px;
+        }
+        #header-text {
+            font-size: 1.5rem;
             color: #fff;
-            text-decoration: none;
         }
-        .anime-item a:hover {
-            background: #555;
+        #container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 80px; /* Space for fixed header */
+            width: 100%;
+            max-width: 1200px;
+            padding: 20px;
+            box-sizing: border-box;
         }
-        @media (max-width: 768px) {
-            .anime-item {
-                width: 100%;
-            }
+        #anime-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .anime-button {
+            background-color: #444;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            text-align: center;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        .anime-button:hover {
+            background-color: #555;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Softroll - Popular Anime</h1>
+        <div id="logo-container">
+            <img src="your-logo-url.png" alt="Logo" id="logo">
+            <span id="header-text">Softroll</span>
+        </div>
     </header>
 
-    <div class="container">
-        <div class="anime-list">
-            <div class="anime-item">
-                <img src="https://m.media-amazon.com/images/M/MV5BMzMxY2YyODUtZjlmZi00YjM3LWE4N2YtMjQ5OTg5NTFkZDQ2XkEyXkFqcGdeQXVyODc5Mjc4Nzg@._V1_FMjpg_UX1000_.jpg" alt="Azumanga Daioh">
-                <a href="anime-player.html?anime=azumanga">Azumanga Daioh</a>
-            </div>
-            <div class="anime-item">
-                <img src="images/naruto-cover.jpg" alt="Naruto">
-                <a href="anime-player.html?anime=naruto">Naruto</a>
-            </div>
-            <div class="anime-item">
-                <img src="images/onepiece-cover.jpg" alt="One Piece">
-                <a href="anime-player.html?anime=onepiece">One Piece</a>
-            </div>
-            <!-- Add more anime items here -->
+    <div id="container">
+        <div id="anime-list">
+            <button class="anime-button" onclick="window.location.href='anime-player.html?title=Azumanga%20Daioh&imdbId=tt0339955&description=Follow%20the%20comedic%20lives%20of%20a%20group%20of%20high%20school%20girls%20in%20this%20charming%20slice-of-life%20anime.&episodeCount=26'">Azumanga Daioh</button>
+            <button class="anime-button" onclick="window.location.href='anime-player.html?title=Initial%20D%20The%20First%20Stage&imdbId=tt0385426&description=The%20first%20season%20of%20Initial%20D%20follows%20the%20racing%20adventures%20of%20street%20racer%20Takumi%20Fujiwara.&episodeCount=26'">Initial D: The First Stage</button>
         </div>
     </div>
 </body>
